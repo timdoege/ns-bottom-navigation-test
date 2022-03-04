@@ -1,0 +1,27 @@
+<MDBottomNavigation #mainTabView (selectedIndexChanged)="onSelectedIndexChanged($event)" (loaded)="onBottomNavigationLoaded($event)">
+    <MDTabStrip iosIconRenderingMode="alwaysOriginal">
+
+        <MDTabStripItem>
+            <Label text="Players Tab"></Label>
+            <Image [src]="getIconSource('ichome')"></Image>
+        </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Teams Tab"></Label>
+            <Image src="{{ getIconSource('icnotification') }}"></Image>
+        </MDTabStripItem>
+
+    </MDTabStrip>
+
+    <MDTabContentItem>
+        <GridLayout>
+            <router-outlet name="playerTab" actionBarVisibility="never"></router-outlet>
+        </GridLayout>
+    </MDTabContentItem>
+
+    <MDTabContentItem>
+        <GridLayout>
+            <router-outlet name="teamTab" actionBarVisibility="never"></router-outlet>
+        </GridLayout>
+    </MDTabContentItem>
+
+</MDBottomNavigation>
