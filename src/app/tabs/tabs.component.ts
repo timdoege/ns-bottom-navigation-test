@@ -22,7 +22,16 @@ export class TabsComponent {
     }
 
     ngOnInit() {
-        this.routerExtension.navigate([{ outlets: { playerTab: ["players"], teamTab: ["teams"] } }], { relativeTo: this.activeRoute });
+        this.routerExtension.navigate(
+            [
+                { 
+                    outlets: {
+                        playerTab: ["players"], teamTab: ["teams"],
+                        statisticsTab: ["statistics"], profileTab: ["profile"]
+                    }
+                }
+            ],
+            { relativeTo: this.activeRoute });
     }
 
     onBottomNavigationLoaded(args: any) {
@@ -45,7 +54,6 @@ export class TabsComponent {
         }
         // console.log('getIconSource for icon', icon, ' - selTabIdx is ', selTabIdx);
         if (selTabIdx === 0 && icon === 'ichome') {
-            console.log('load on',icon);
             return 'res://' + icon + 'on';
         }
         if (selTabIdx === 1 && icon === 'icnotification') {

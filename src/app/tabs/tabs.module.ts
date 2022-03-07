@@ -16,14 +16,27 @@ import { TabsComponent } from "./tabs.component";
                         path: "players",
                         outlet: "playerTab",
                         component: NSEmptyOutletComponent,
-                        loadChildren: () => import("~/app/player/players.module").then(m => m.PlayersModule),
+                        loadChildren: () => import("./../player/players.module").then(m => m.PlayersModule),
                     },
                     {
                         path: "teams",
                         outlet: "teamTab",
                         component: NSEmptyOutletComponent,
-                        loadChildren: () => import("~/app/team/teams.module").then(m => m.TeamsModule),
+                        loadChildren: () => import("./../team/teams.module").then(m => m.TeamsModule),
+                    },
+                    {
+                        path: "statistics",
+                        outlet: "statisticsTab",
+                        component: NSEmptyOutletComponent,
+                        loadChildren: () => import("./../statistics/statistics.module").then(m => m.StatisticsModule),
+                    },
+                    {
+                        path: "profile",
+                        outlet: "profileTab",
+                        component: NSEmptyOutletComponent,
+                        loadChildren: () => import("./../profile/profile.module").then(m => m.ProfileModule),
                     }
+
                 ]
             }
         ])

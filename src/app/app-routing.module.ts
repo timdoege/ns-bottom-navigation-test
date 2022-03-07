@@ -15,12 +15,16 @@ const routes: Routes = [
     },
     {
         path: "tabs",
-        loadChildren: () => import("~/app/tabs/tabs.module").then(m => m.TabsModule),
+        loadChildren: () => import("./tabs/tabs.module").then(m => m.TabsModule),
   },
 ]
 
 @NgModule({
-  imports: [NativeScriptRouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [NativeScriptRouterModule.forRoot(routes,
+    { 
+      // enableTracing: true
+    }
+    )],
   exports: [NativeScriptRouterModule],
 })
 export class AppRoutingModule {}

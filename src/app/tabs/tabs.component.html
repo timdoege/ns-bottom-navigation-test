@@ -9,18 +9,38 @@
             <Label text="Teams Tab"></Label>
             <Image src="{{ getIconSource('icnotification') }}"></Image>
         </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Statistics Tab"></Label>
+            <Image src="font://&#xf007;" class="fas t-36"></Image>
+        </MDTabStripItem>
+        <MDTabStripItem>
+            <Label text="Profile Tab"></Label>
+            <Image src="font://&#xf0c0;" class="fas t-36"></Image>
+        </MDTabStripItem>
 
     </MDTabStrip>
 
     <MDTabContentItem>
         <GridLayout>
-            <router-outlet name="playerTab" actionBarVisibility="never"></router-outlet>
+            <router-outlet name="playerTab"></router-outlet>
         </GridLayout>
     </MDTabContentItem>
 
     <MDTabContentItem>
         <GridLayout>
-            <router-outlet name="teamTab" actionBarVisibility="never"></router-outlet>
+            <router-outlet name="teamTab"></router-outlet>
+        </GridLayout>
+    </MDTabContentItem>
+
+    <MDTabContentItem>
+        <GridLayout>
+            <router-outlet name="statisticsTab"></router-outlet>
+        </GridLayout>
+    </MDTabContentItem>
+
+    <MDTabContentItem>
+        <GridLayout>
+            <router-outlet name="profileTab"></router-outlet>
         </GridLayout>
     </MDTabContentItem>
 
