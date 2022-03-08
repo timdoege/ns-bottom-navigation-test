@@ -36,7 +36,7 @@ export class TabsComponent {
 
     onBottomNavigationLoaded(args: any) {
         this.mainTabView = (<BottomNavigation>this.mainTabViewElement.nativeElement);
-        console.log('BottomNavigationComponent loaded - selIdx =', this.mainTabView.selectedIndex, ', tabSelectedIndex = ', this.tabSelectedIndex);
+        // console.log('BottomNavigationComponent loaded - selIdx =', this.mainTabView.selectedIndex, ', tabSelectedIndex = ', this.tabSelectedIndex);
         if (this.tabSelectedIndex !== this.mainTabView.selectedIndex) {
             this.setSelectedIndex(this.tabSelectedIndex);
         }
@@ -44,7 +44,7 @@ export class TabsComponent {
     
     onSelectedIndexChanged(args: any) {
         const newIndex = args.newIndex;
-        console.log('onSelectedIndexChanged - NEW ', newIndex, 'internal=',this.tabSelectedIndex);
+        // console.log('onSelectedIndexChanged - NEW ', newIndex, 'internal=',this.tabSelectedIndex);
     }
 
     getIconSource(icon: string): string {

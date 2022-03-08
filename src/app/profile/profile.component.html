@@ -1,5 +1,17 @@
 <ActionBar title="Profile" class="action-bar"></ActionBar>
 
-<GridLayout class="page">
+<StackLayout class="page">
     <Label text="Profile ..."></Label>
-</GridLayout>
+    <BarcodeView #scannerView
+        width="350"
+        height="200"
+        formats="CODE_128, CODE_39"
+        beepOnScan="false"
+        reportDuplicates="true"
+        preferFrontCamera="false"
+        [pause]="pauseScanning"
+        (scanResult)="onBarcodePluginScanResult($event)">
+    </BarcodeView>
+    <Label text="Scan"></Label>
+
+</StackLayout>

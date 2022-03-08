@@ -11,7 +11,7 @@
 
 android {
   defaultConfig {
-    minSdkVersion 17
+    minSdkVersion 19
     // ndkVersion "22.1.7171670"
     generatedDensities = []
   }
