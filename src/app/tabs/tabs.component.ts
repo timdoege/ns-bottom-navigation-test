@@ -44,7 +44,7 @@ export class TabsComponent {
     
     onSelectedIndexChanged(args: any) {
         const newIndex = args.newIndex;
-        // console.log('onSelectedIndexChanged - NEW ', newIndex, 'internal=',this.tabSelectedIndex);
+        console.log('onSelectedIndexChanged - NEW ', newIndex);
     }
 
     getIconSource(icon: string): string {
@@ -52,7 +52,6 @@ export class TabsComponent {
         if (this.mainTabView) {
             selTabIdx = this.mainTabView.selectedIndex;
         }
-        // console.log('getIconSource for icon', icon, ' - selTabIdx is ', selTabIdx);
         if (selTabIdx === 0 && icon === 'ichome') {
             return 'res://' + icon + 'on';
         }

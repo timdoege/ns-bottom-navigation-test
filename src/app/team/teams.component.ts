@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService, DataItem } from "../data.service";
+import { Page, Trace, Utils } from '@nativescript/core';
 
 @Component({
     selector: "ns-teams",
@@ -8,7 +9,14 @@ import { DataService, DataItem } from "../data.service";
 export class TeamsComponent implements OnInit {
     items: DataItem[];
 
-    constructor(private itemService: DataService) { }
+    constructor(private itemService: DataService, private page: Page) {
+        this.page.on('loaded', data => {
+            console.log('TeamsComponent onLoaded');
+        });
+        this.page.on('navigatedTo', data => {
+            console.log('TeamsComponent navigatedTo');
+        });
+    }
 
     ngOnInit(): void {
         this.items = this.itemService.getTeams();

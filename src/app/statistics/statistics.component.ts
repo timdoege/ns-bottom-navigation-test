@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Page, Trace, Utils } from '@nativescript/core';
 
 @Component({
     selector: "ns-statistics",
@@ -6,7 +7,14 @@ import { Component, OnInit } from "@angular/core";
 })
 export class StatisticsComponent implements OnInit {
 
-    constructor() { }
+    constructor(private page: Page) {
+        this.page.on('loaded', data => {
+            console.log('StatisticsComponent onLoaded');
+        });
+        this.page.on('navigatedTo', data => {
+            console.log('StatisticsComponent navigatedTo');
+        });
+    }
 
     ngOnInit(): void {
     }
