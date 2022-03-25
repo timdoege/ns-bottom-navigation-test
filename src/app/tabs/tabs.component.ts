@@ -36,8 +36,8 @@ export class TabsComponent {
 
     onBottomNavigationLoaded(args: any) {
         this.mainTabView = (<BottomNavigation>this.mainTabViewElement.nativeElement);
-        // console.log('BottomNavigationComponent loaded - selIdx =', this.mainTabView.selectedIndex, ', tabSelectedIndex = ', this.tabSelectedIndex);
-        if (this.tabSelectedIndex !== this.mainTabView.selectedIndex) {
+        console.log('BottomNavigationComponent loaded - selIdx =', this.mainTabView.selectedIndex, ', tabSelectedIndex = ', this.tabSelectedIndex);
+        if (this.mainTabView.selectedIndex && this.tabSelectedIndex !== this.mainTabView.selectedIndex) {
             this.setSelectedIndex(this.tabSelectedIndex);
         }
     }
@@ -71,5 +71,14 @@ export class TabsComponent {
             // console.log('BottonNavigationComponent not ready yet - mark tab change for later to tab ', idx);
             this.tabSelectedIndex = idx;
         }
-    }    
+    }
+
+    public onTabSelected(ev: any) {
+        console.log('tab sel');
+    }
+    public onTabDeselected(ev: any) {
+        console.log('tab unsel');
+    }
+
+
 }

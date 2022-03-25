@@ -13,9 +13,10 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@nativescript-community/ui-barcodeview": "^3.5.4",
+    "@nativescript-community/ui-material-core": "~7.0.0",
     "@nativescript-community/ui-material-bottom-navigation": "~7.0.0",
     "@nativescript/angular": "^13.0.3",
-    "@nativescript/core": "~8.2.0",
+    "@nativescript/core": "~8.2.1",
     "@nativescript/theme": "~3.0.1",
     "rxjs": "~7.4.0",
     "zone.js": "~0.11.5"

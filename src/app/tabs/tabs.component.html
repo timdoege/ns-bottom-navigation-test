@@ -1,19 +1,21 @@
-<MDBottomNavigation #mainTabView (selectedIndexChanged)="onSelectedIndexChanged($event)" (loaded)="onBottomNavigationLoaded($event)">
+<MDBottomNavigation #mainTabView
+    (selectedIndexChanged)="onSelectedIndexChanged($event)" 
+    (loaded)="onBottomNavigationLoaded($event)">
     <MDTabStrip iosIconRenderingMode="alwaysOriginal">
 
-        <MDTabStripItem>
+        <MDTabStripItem (selected)="onTabSelected($event)" (unselected)="onTabDeselected($event)">
             <Label text="Players Tab"></Label>
             <Image [src]="getIconSource('ichome')"></Image>
         </MDTabStripItem>
-        <MDTabStripItem>
+        <MDTabStripItem (selected)="onTabSelected($event)" (unselected)="onTabDeselected($event)">
             <Label text="Teams Tab"></Label>
             <Image src="{{ getIconSource('icnotification') }}"></Image>
         </MDTabStripItem>
-        <MDTabStripItem>
+        <MDTabStripItem (selected)="onTabSelected($event)" (unselected)="onTabDeselected($event)">
             <Label text="Statistics Tab"></Label>
             <Image src="font://&#xf007;" class="fas t-36"></Image>
         </MDTabStripItem>
-        <MDTabStripItem>
+        <MDTabStripItem (selected)="onTabSelected($event)" (unselected)="onTabDeselected($event)">
             <Label text="Profile Tab"></Label>
             <Image src="font://&#xf0c0;" class="fas t-36"></Image>
         </MDTabStripItem>
@@ -22,25 +24,25 @@
 
     <MDTabContentItem>
         <GridLayout>
-            <page-router-outlet name="playerTab"></page-router-outlet>
+            <router-outlet name="playerTab"></router-outlet>
         </GridLayout>
     </MDTabContentItem>
 
     <MDTabContentItem>
         <GridLayout>
-            <page-router-outlet name="teamTab"></page-router-outlet>
+            <router-outlet name="teamTab"></router-outlet>
         </GridLayout>
     </MDTabContentItem>
 
     <MDTabContentItem>
         <GridLayout>
-            <page-router-outlet name="statisticsTab"></page-router-outlet>
+            <router-outlet name="statisticsTab"></router-outlet>
         </GridLayout>
     </MDTabContentItem>
 
     <MDTabContentItem>
         <GridLayout>
-            <page-router-outlet name="profileTab"></page-router-outlet>
+            <router-outlet name="profileTab"></router-outlet>
         </GridLayout>
     </MDTabContentItem>
 
